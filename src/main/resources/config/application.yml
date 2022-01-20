@@ -1,0 +1,37 @@
+# ===================================================================
+# Standard Spring Boot properties.
+# Full reference is available at:
+# http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+# ===================================================================
+
+management:
+  endpoints:
+    web:
+      base-path: /management
+      exposure:
+        include: ['configprops', 'env', 'health', 'info', 'logfile', 'loggers']
+  endpoint:
+
+  info:
+    git:
+      mode: full
+
+spring:
+  application:
+    name: search-api
+  jmx:
+    enabled: false
+  jackson:
+    serialization:
+      indent_output: true
+  elasticsearch:
+    rest:
+      uris: https://vpc-ao-deve01-vpc01-es01-6sobyi4j4p4b2hobgaz2prrlwm.us-east-1.es.amazonaws.com:443
+
+
+server:
+  port: 8080
+  servlet:
+    session:
+      cookie:
+        http-only: true
